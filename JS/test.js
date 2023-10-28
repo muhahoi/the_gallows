@@ -1,12 +1,11 @@
-const path = "dictionary.txt";
-
-const fs = require("fs");
-
-const text = fs.readFileSync(path, "utf8");
-
-// Выбираем случайное слово из текста файла
-const words = text.replace(/\r/g, "").split("\n");
-const randomWordIndex = Math.floor(Math.random() * words.length);
-const randomWord = words[randomWordIndex];
-
-console.log(randomWord);
+let length = 6;
+//Ввести единую переменную и много циклов, каждый из которых будет зависить от length. Записывать их c минусами. И каждая неугаданная буква добавляет ++ к length и после этого появляются новые символы]
+for (let i = 1; i < 2; i++) {
+	console.log("_________");
+}
+for (let i = 1; i < 2; i++) {
+	console.log("│      |");
+}
+for (let i = 0; i < length; i++) {
+	console.log("│");
+}
