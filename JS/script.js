@@ -1,16 +1,13 @@
 "use strict";
 //https://zhukovsd.github.io/java-backend-learning-course/Projects/Hangman/
-
-// глобальная переменная для хранения загаданного слова
-let randomWord;
-
-// глобальная переменная для хранения массива звездочек
-let starsArrow;
+//// глобальная переменная для хранения загаданного слова
+//let randomWord = start();
+//// глобальная переменная для хранения массива звездочек
+//let starsArrow = stars();
 
 function greetings() {
 	for (let i = 1; i < 2; i++) {
 		let greetings = prompt("[N]ew game or [E]xit");
-
 		if (greetings == "N" || greetings == "n") {
 			console.log("Отлично");
 			start();
@@ -26,36 +23,41 @@ function greetings() {
 
 async function start() {
 	const path = "http://127.0.0.1:5500/dictionary.txt";
-
 	const text = await fetch(path).then((response) => response.text());
-
 	// Выбираем случайное слово из текста файла
 	const words = text.replace(/\r/g, "").split("\n");
 	randomWord = [...words[Math.floor(Math.random() * words.length)]];
-
-	console.log("start randomWord", randomWord);
 	stars();
-	return randomWord;
+	//return randomWord;
 }
 
 function stars() {
 	let star = "*";
 	let randomWordLength = randomWord.length;
 	let stars = star.repeat(randomWordLength);
-	let starsArrow = [...stars];
-	console.log("Загаданное слово: ", stars);
-	console.log("randomWordLength", randomWordLength);
-	console.log("stars arrow: ", starsArrow);
-	return starsArrow;
+	starsArrow = [...stars];
+	//getLetter();
+	//return starsArrow;
 }
 
-// Выводим запрос буквы
-function getLetter() {
-	let letter = prompt("Введите букву", "");
-	for (let i = 0; i < randomWord.length; i++) {
-		if (letter == randomWord[i]) {
-			randomWord[i] = 
-		}
-	}
-}
+//// Выводим запрос буквы
+//function getLetter() {
+//	//let starsArrow = [];
+//	//необходимо сделать проверку на повторное введение буквы. Надо выводить сообщение, что уже есть такая буква и отматывать назад счетчик
+//	let letter = prompt("Введите букву", "");
+//	for (let i = 0; i < randomWord.length; i++) {
+//		if (letter == randomWord[i]) {
+//			starsArrow[i] = letter;
+
+//			//randomWord[i] =
+//		}
+//	}
+//}
 greetings();
+// глобальная переменная для хранения загаданного слова
+let randomWord;
+// глобальная переменная для хранения массива звездочек
+let starsArrow;
+//stars(start());
+//console.log("randomWord: ", randomWord);
+//console.log("stars arrow: ", starsArrow);

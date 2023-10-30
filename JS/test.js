@@ -1,11 +1,53 @@
-let length = 6;
-//Ввести единую переменную и много циклов, каждый из которых будет зависить от length. Записывать их c минусами. И каждая неугаданная буква добавляет ++ к length и после этого появляются новые символы]
-for (let i = 1; i < 2; i++) {
-	console.log("_________");
+"use strict";
+let userName;
+let sum1 = Sum1();
+let sum2 = Sum2();
+let sum3 = Sum3();
+function greetings() {
+	for (let i = 1; i < 2; i++) {
+		userName = prompt("Привет! Как тебя зовут?", "");
+
+		if (
+			userName == NaN ||
+			userName == null ||
+			userName == undefined ||
+			userName == ""
+		) {
+			i--;
+		} else {
+			start();
+		}
+	}
+
+	return userName;
 }
-for (let i = 1; i < 2; i++) {
-	console.log("│      |");
+
+function start() {
+	let answer = confirm(`${userName}, ты хочешь посчитать?`);
+	if (answer == true) {
+		Sum1();
+	} else {
+		alert(`Goodbuy, ${userName}!`);
+	}
 }
-for (let i = 0; i < length; i++) {
-	console.log("│");
+function Sum1() {
+	let a = Sum2();
+	let b = Sum3();
+	let sum1 = a + b;
+	return sum1;
 }
+
+function Sum2() {
+	let c = 4;
+	let d = 5;
+	let sum2 = d - c;
+	return sum2;
+}
+
+function Sum3() {
+	return 4 + 5;
+}
+greetings();
+console.log(sum1);
+console.log(sum2);
+console.log(sum3);
