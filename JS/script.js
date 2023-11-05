@@ -3,6 +3,7 @@
 
 function greetings() {
 	for (let i = 1; i < 2; i++) {
+		//let greetings = "н";
 		let greetings = prompt("[Н]ачать новую игру или [В]ыйти из игры");
 		if (greetings == "Н" || greetings == "н") {
 			start();
@@ -24,10 +25,12 @@ async function start() {
 	// Выбираем случайное слово из текста файла
 	const words = text.replace(/\r/g, "").split("\n");
 	randomWord = [...words[Math.floor(Math.random() * words.length)]];
+	//randomWord = ["Р"];
 	stars();
 }
 
 function stars() {
+	round++;
 	let star = "*";
 	let randomWordLength = randomWord.length;
 	let stars = star.repeat(randomWordLength);
@@ -45,19 +48,20 @@ async function getLetter() {
 	let wrongLetterString = "";
 
 	outer: for (let j = 0; j < randomWord.length + 5; j++) {
-		let letter = prompt(`Введите букву русского алфавита\n
-${randomWord}\n
+		let letter = prompt(`Раунд: ${round}\n
+Рекорд: ${record}\n
 Загаданное слово: ${starsArrow.reduce((accumulator, currentValue) => {
 			return accumulator + currentValue;
 		}, "")}\n
-Неправильные буквы: ${wrongLetterString}`);
-
+Неправильные буквы: ${wrongLetterString}\n
+Введите букву русского алфавита:`);
+		letter = letter.toUpperCase();
 		if (
 			letter == null ||
 			letter.length != 1 ||
 			letter == "" ||
 			!isNaN(letter) ||
-			!letter.match(/^[А-Яа-яёё]$/)
+			!letter.match(/^[А-Яа-яЁё]$/)
 		) {
 			j--;
 			continue outer;
@@ -88,9 +92,24 @@ ${randomWord}\n
 			inputLetterArrow.push(letter);
 			wrongLetterArrow.push(letter);
 			wrongLetterString += `${letter} `;
+			alert("Такой буквы нет.");
 		}
+
 		if (mistake == 6) {
-			alert("Вы проиграли.");
+			alert(`Вы проиграли.\n
+Загаданное слово: ${randomWord.reduce((accumulator, currentValue) => {
+				return accumulator + currentValue;
+			}, "")}`);
+			winningRounds = round - 1;
+			round = 0;
+			if (winningRounds != 1 && winningRounds > record) {
+				record = winningRounds;
+			}
+			break;
+		}
+
+		if (guess == randomWord.length && mistake == 0) {
+			alert(`Поздравляю! Идеальная победа!`);
 			break;
 		}
 
@@ -108,3 +127,7 @@ greetings();
 let randomWord;
 // глобальная переменная для хранения массива звездочек
 let starsArrow;
+
+let round = 0;
+let winningRounds = 0;
+let record = 0;
