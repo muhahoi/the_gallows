@@ -99,16 +99,13 @@ h6 {
   display: flex;
   flex-direction: column;
   min-height: 100%;
-  background: linear-gradient(LightSteelBlue, transparent 1px), linear-gradient(90deg, LightSteelBlue, transparent 1px);
-  background-size: 16px 16px;
-  background-position: center center;
-  border: 2px solid LightSteelBlue;
 }
 
 .container {
-  max-width: 650px; /*увеличил на 30px для отступов безопасности*/
+  max-width: 900px; /*увеличил на 30px для отступов безопасности*/
   margin: 0 auto; /*центруем контент*/
-  padding: 0 40px; /*отступы безопасности*/
+  padding: 10px 25px 0 25px; /*отступы безопасности*/
+  border: 1px solid #0b9f1c;
 }
 
 .header {
@@ -118,8 +115,6 @@ h6 {
 .header__container {
   display: flex;
   justify-content: space-between;
-  padding-top: 10px;
-  align-items: center;
   height: 100%;
   width: 100%;
 }
@@ -139,87 +134,23 @@ h6 {
   flex-direction: row;
 }
 
-.settings-btn {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 45px;
-  height: 45px;
-  border: 2px solid #000;
-  border-radius: 50%;
-  font-size: 30px;
+.settings__exit {
+  font-size: 20px;
+  border: 1px solid #0b269f;
 }
 
-.settings__help {
-  margin-right: 10px;
+.exit {
+  font-size: 40px;
+  border: 1px solid #0b269f;
 }
 
-.image__container {
-  padding-top: 20px;
-  margin: 0 auto;
-  max-width: 282px;
-}
-
-path {
-  stroke-linecap: round;
-  stroke-width: 3px;
-  animation: draw 3s linear forwards;
-  stroke-dasharray: 1000;
-  stroke-dashoffset: 1000;
-}
-
-@keyframes draw {
-  100% {
-    stroke-dashoffset: 100;
-  }
-}
-.one {
-  display: none;
-}
-
-.two {
-  display: none;
-}
-
-.three {
-  display: none;
-}
-
-.four {
-  display: none;
-}
-
-.five {
-  display: none;
-}
-
-.six {
-  display: none;
-}
-
-.seven {
-  display: none;
-}
-
-.word__section {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
+.gallows {
   flex: 1 1 auto;
-  padding: 15px 0;
-}
-
-.word {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 30px;
-  letter-spacing: 15px;
 }
 
 .keyboard__container {
   margin: 0 auto;
-  margin-bottom: 30px;
+  padding-bottom: 10px;
 }
 
 .buttons-row1 {
