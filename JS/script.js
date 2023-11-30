@@ -131,3 +131,5 @@ let starsArrow;
 let round = 0;
 let winningRounds = 0;
 let record = 0;
+
+//Всплывающее окно

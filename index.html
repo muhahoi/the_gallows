@@ -1,72 +1,98 @@
 <!DOCTYPE html>
 <html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<title>Виселица</title>
-		<link rel="stylesheet" href="/CSS/style.css" />
-	</head>
-	<body>
-		<div class="wrapper">
-			<div class="upper-section container">
-				<div class="header">
-					<div class="round">РАУНД:</div>
-					<div class="record">РЕКОРД:</div>
-					<div class="menu-container">
-						<div class="exit"><-</div>
-						<div class="button-menu-container">
-							<div class="button-menu menu1">-</div>
-							<div class="button-menu menu2">-</div>
-							<div class="button-menu menu3">-</div>
-						</div>
+
+<head>
+	<meta charset="UTF-8" />
+	<title>Виселица</title>
+	<link rel="stylesheet" href="/CSS/style.css" />
+</head>
+
+<body>
+	<div class="wrapper">
+		<header class="header">
+			<div class="header__container container">
+
+				<div class="header__round-body">
+					<div class="round__title">Раунд</div>
+					<div class="round__number">__</div>
+				</div>
+
+				<div class="header__record-body">
+					<div class="record__title">Рекорд</div>
+					<div class="record__number">__</div>
+				</div>
+
+				<div class="header__settings-body">
+					<div class="settings__exit">
+						<a href="/index_start.html" class="exit">ВЫХОД</a>
 					</div>
 				</div>
-				<div class="gallows"></div>
 			</div>
-			<div class="lower-section container">
-				<div class="word">_ _ _ _ _ _ _ _</div>
-				<div class="buttons">
-					<div class="buttons-row1">
-						<div class="btn btn1 btn__true btn__false">А</div>
-						<div class="btn btn2 btn__true btn__false">Б</div>
-						<div class="btn btn3 btn__true btn__false">В</div>
-						<div class="btn btn1 btn__true btn__false">А</div>
-						<div class="btn btn2 btn__true btn__false">Б</div>
-						<div class="btn btn3 btn__true btn__false">В</div>
-						<div class="btn btn1 btn__true btn__false">А</div>
-						<div class="btn btn2 btn__true btn__false">Б</div>
-						<div class="btn btn3 btn__true btn__false">В</div>
-						<div class="btn btn1 btn__true btn__false">А</div>
-						<div class="btn btn2 btn__true btn__false">Б</div>
+		</header>
+
+		<section class="gallows">
+			<div class="gallows__container">
+				<div class="gallows__content">
+
+					<div class="image__container">
+						<svg class="gallows__img"></svg>
 					</div>
-					<div class="buttons-row2">
-						<div class="btn btn4 btn__true btn__false">Г</div>
-						<div class="btn btn5 btn__true btn__false">Д</div>
-						<div class="btn btn6 btn__true btn__false">Е</div>
-						<div class="btn btn4 btn__true btn__false">Г</div>
-						<div class="btn btn5 btn__true btn__false">Д</div>
-						<div class="btn btn6 btn__true btn__false">Е</div>
-						<div class="btn btn4 btn__true btn__false">Г</div>
-						<div class="btn btn5 btn__true btn__false">Д</div>
-						<div class="btn btn6 btn__true btn__false">Е</div>
-						<div class="btn btn4 btn__true btn__false">Г</div>
-						<div class="btn btn5 btn__true btn__false">Д</div>
+
+					<div class="word__container">
+						<div class="word">________</div>
 					</div>
-					<div class="buttons-row3">
-						<div class="btn btn7 btn__true btn__false">Ж</div>
-						<div class="btn btn8 btn__true btn__false">З</div>
-						<div class="btn btn9 btn__true btn__false">И</div>
-						<div class="btn btn7 btn__true btn__false">Ж</div>
-						<div class="btn btn8 btn__true btn__false">З</div>
-						<div class="btn btn9 btn__true btn__false">И</div>
-						<div class="btn btn7 btn__true btn__false">Ж</div>
-						<div class="btn btn8 btn__true btn__false">З</div>
-						<div class="btn btn9 btn__true btn__false">И</div>
-						<div class="btn btn7 btn__true btn__false">Ж</div>
-						<div class="btn btn8 btn__true btn__false">З</div>
-					</div>
+				</div>
+			</div>
+		</section>
+
+		<section class="keyboard"></section>
+		<div class="keyboard__container">
+			<div class="keyboard__content">
+				<div class="buttons-row1">
+					<div class="btn btn1 btn__true btn__false">А</div>
+					<div class="btn btn2 btn__true btn__false">Б</div>
+					<div class="btn btn3 btn__true btn__false">В</div>
+					<div class="btn btn4 btn__true btn__false">Г</div>
+					<div class="btn btn5 btn__true btn__false">Д</div>
+					<div class="btn btn6 btn__true btn__false">Е</div>
+					<div class="btn btn7 btn__true btn__false">Ё</div>
+					<div class="btn btn8 btn__true btn__false">Ж</div>
+					<div class="btn btn9 btn__true btn__false">З</div>
+					<div class="btn btn10 btn__true btn__false">И</div>
+					<div class="btn btn11 btn__true btn__false">Й</div>
+				</div>
+				<div class="buttons-row2">
+					<div class="btn btn12 btn__true btn__false">К</div>
+					<div class="btn btn13 btn__true btn__false">Л</div>
+					<div class="btn btn14 btn__true btn__false">М</div>
+					<div class="btn btn15 btn__true btn__false">Н</div>
+					<div class="btn btn16 btn__true btn__false">О</div>
+					<div class="btn btn17 btn__true btn__false">П</div>
+					<div class="btn btn18 btn__true btn__false">Р</div>
+					<div class="btn btn19 btn__true btn__false">С</div>
+					<div class="btn btn20 btn__true btn__false">Т</div>
+					<div class="btn btn21 btn__true btn__false">У</div>
+					<div class="btn btn22 btn__true btn__false">Ф</div>
+				</div>
+				<div class="buttons-row3">
+					<div class="btn btn23 btn__true btn__false">Х</div>
+					<div class="btn btn24 btn__true btn__false">Ц</div>
+					<div class="btn btn25 btn__true btn__false">Ч</div>
+					<div class="btn btn26 btn__true btn__false">Ш</div>
+					<div class="btn btn27 btn__true btn__false">Щ</div>
+					<div class="btn btn28 btn__true btn__false">Ъ</div>
+					<div class="btn btn29 btn__true btn__false">Ы</div>
+					<div class="btn btn30 btn__true btn__false">Ь</div>
+					<div class="btn btn31 btn__true btn__false">Э</div>
+					<div class="btn btn32 btn__true btn__false">Ю</div>
+					<div class="btn btn33 btn__true btn__false">Я</div>
 				</div>
 			</div>
 		</div>
-		<!--<script src="JS/script.js"></script>-->
-	</body>
+
+	</div>
+
+	<!--<script src="JS/script.js"></script>-->
+</body>
+
 </html>
