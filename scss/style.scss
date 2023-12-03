@@ -114,6 +114,7 @@ h6 {
 .header__round-body {
 	display: flex;
 	flex-direction: row;
+	user-select: none;
 }
 .round__title {
 }
@@ -122,6 +123,7 @@ h6 {
 .header__record-body {
 	display: flex;
 	flex-direction: row;
+	user-select: none;
 }
 .record__title {
 }
@@ -132,6 +134,7 @@ h6 {
 	flex-direction: row;
 }
 .settings-btn {
+	margin: 5px;
 	display: flex;
 	align-items: center;
 	justify-content: center;
@@ -140,9 +143,28 @@ h6 {
 	border: 2px solid #000;
 	border-radius: 50%;
 	font-size: 30px;
+
+	&:hover {
+		margin: 4px;
+		width: 47px;
+		height: 47px;
+		font-size: 32px;
+		border: 3px solid #1d1d1d;
+		box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
+	}
+
+	&:active {
+		margin: 6px;
+		width: 43px;
+		height: 43px;
+		font-size: 28px;
+		border: 2px solid #000000;
+	}
 }
 .settings__help {
-	margin-right: 10px;
+	user-select: none;
+
+	cursor: pointer;
 }
 .settings__exit {
 }
@@ -223,6 +245,9 @@ path {
 }
 .keyboard__content {
 }
+
+.buttons {
+}
 .buttons-row1 {
 	display: flex;
 	flex-direction: row;
@@ -237,6 +262,25 @@ path {
 	border: 2px solid #000;
 	border-radius: 50%;
 	font-size: 30px;
+	cursor: pointer;
+	user-select: none;
+
+	&:hover {
+		margin: 4px;
+		width: 47px;
+		height: 47px;
+		font-size: 32px;
+		border: 3px solid #1d1d1d;
+		box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
+	}
+
+	&:active {
+		margin: 6px;
+		width: 43px;
+		height: 43px;
+		font-size: 28px;
+		border: 2px solid #000000;
+	}
 }
 
 .btn__true {
