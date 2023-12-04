@@ -242,6 +242,21 @@ path {
   letter-spacing: 15px;
 }
 
+.letterBox {
+  margin: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 45px;
+  height: 45px;
+  border-bottom: 2px solid #000;
+  font-size: 30px;
+  cursor: pointer;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
+}
+
 .keyboard__container {
   margin: 0 auto;
   margin-bottom: 30px;

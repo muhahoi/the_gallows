@@ -1,7 +1,5 @@
-const array = [1, 2, 3, 4, 5];
+// Получаем элемент с классом letter[i]
+const element = document.querySelector(`${letter + i}`);
 
-const string = array.reduce((accumulator, currentValue) => {
-	return accumulator + currentValue;
-}, "");
-
-console.log(string);
+// Устанавливаем значение переменной в элемент
+element.textContent = randomWord[i];

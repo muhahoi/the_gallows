@@ -3,8 +3,8 @@
 
 function greetings() {
 	for (let i = 1; i < 2; i++) {
-		//let greetings = "н";
-		let greetings = prompt("[Н]ачать новую игру или [В]ыйти из игры");
+		let greetings = "н";
+		//let greetings = prompt("[Н]ачать новую игру или [В]ыйти из игры");
 		if (greetings == "Н" || greetings == "н") {
 			start();
 		} else if (greetings == "В" || greetings == "в") {
@@ -25,7 +25,6 @@ async function start() {
 	// Выбираем случайное слово из текста файла
 	const words = text.replace(/\r/g, "").split("\n");
 	randomWord = [...words[Math.floor(Math.random() * words.length)]];
-	//randomWord = ["Р"];
 	stars();
 }
 
@@ -36,6 +35,19 @@ function stars() {
 	let stars = star.repeat(randomWordLength);
 	starsArrow = [...stars];
 	console.log(randomWord);
+
+	let letterCount = randomWord.length;
+
+	// Получаем родительский элемент, в который будем вставлять блоки
+	let parent = document.getElementById("word");
+
+	// Создаем и вставляем блоки в цикле
+	for (let i = 0; i < letterCount; i++) {
+		let div = document.createElement("div");
+		div.className = "letterBox letterBox" + i; // Присваиваем разные классы
+		parent.appendChild(div);
+	}
+
 	getLetter();
 }
 
