@@ -20,7 +20,7 @@ function greetings() {
 }
 
 async function start() {
-	const path = "http://127.0.0.1:5500/dictionary.txt";
+	const path = "http://127.0.0.1:5501/dictionary.txt";
 	const text = await fetch(path).then((response) => response.text());
 	// Выбираем случайное слово из текста файла
 	const words = text.replace(/\r/g, "").split("\n");
@@ -36,10 +36,10 @@ function stars() {
 	starsArrow = [...stars];
 	console.log(randomWord);
 
-	let letterCount = randomWord.length;
+	//let letterCount = randomWord.length;
 
 	// Получаем родительский элемент, в который будем вставлять блоки
-	let parent = document.getElementById("word");
+	//let parent = document.getElementById("word");
 
 	// Создаем и вставляем блоки в цикле
 	//for (let i = 0; i < letterCount; i++) {

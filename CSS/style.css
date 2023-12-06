@@ -17,6 +17,10 @@
   outline: none;
 }
 
+a {
+  color: inherit;
+}
+
 a:focus,
 a:active {
   outline: none;
@@ -55,6 +59,7 @@ input::-ms-clear {
 
 button {
   cursor: pointer;
+  background: transparent;
 }
 
 button::-moz-focus-inner {
@@ -127,6 +132,7 @@ h6 {
 .header__round-body {
   display: flex;
   flex-direction: row;
+  width: 33.333%;
   -webkit-user-select: none;
      -moz-user-select: none;
           user-select: none;
@@ -135,6 +141,8 @@ h6 {
 .header__record-body {
   display: flex;
   flex-direction: row;
+  justify-content: center;
+  width: 33.333%;
   -webkit-user-select: none;
      -moz-user-select: none;
           user-select: none;
@@ -143,6 +151,8 @@ h6 {
 .header__settings-body {
   display: flex;
   flex-direction: row;
+  justify-content: end;
+  width: 33.333%;
 }
 
 .settings-btn {
@@ -179,7 +189,25 @@ h6 {
   cursor: pointer;
 }
 
+.settings__exit {
+  display: none;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
+  cursor: pointer;
+}
+
+.name {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding-top: 200px;
+  font-size: 100px;
+}
+
 .image__container {
+  display: none;
   padding-top: 20px;
   margin: 0 auto;
   max-width: 282px;
@@ -234,6 +262,49 @@ path {
   padding: 15px 0;
 }
 
+.start__container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 5px;
+  width: 110px;
+  height: 45px;
+  border: 2px solid #000;
+  border-radius: 10px;
+  cursor: pointer;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
+}
+.start__container:hover {
+  margin: 4px;
+  width: 116px;
+  height: 47px;
+  border: 3px solid #1d1d1d;
+  box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
+}
+.start__container:hover .start {
+  font-size: 31px;
+}
+.start__container:active {
+  margin: 6px;
+  width: 108px;
+  height: 43px;
+  border: 2px solid #1d1d1d;
+}
+.start__container:active .start {
+  font-size: 29px;
+}
+
+.start {
+  font-size: 30px;
+}
+
+.word__container {
+  display: none;
+}
+
 .word {
   display: flex;
   align-items: center;
@@ -258,6 +329,7 @@ path {
 }
 
 .keyboard__container {
+  display: none;
   margin: 0 auto;
   margin-bottom: 30px;
 }
