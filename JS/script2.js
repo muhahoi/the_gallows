@@ -8,10 +8,10 @@ function greetings() {
 		if (greetings == "Н" || greetings == "н") {
 			start();
 		} else if (greetings == "В" || greetings == "в") {
-			alert("До свидания");
+			console.log("До свидания");
 			break;
 		} else {
-			alert(
+			console.log(
 				`Необходимо ввести "Н", если хотите начать игру, или "В", если хотите выйти из игры`
 			);
 			i--;
@@ -35,19 +35,6 @@ function stars() {
 	let stars = star.repeat(randomWordLength);
 	starsArrow = [...stars];
 	console.log(randomWord);
-
-	let letterCount = randomWord.length;
-
-	// Получаем родительский элемент, в который будем вставлять блоки
-	let parent = document.getElementById("word");
-
-	// Создаем и вставляем блоки в цикле
-	//for (let i = 0; i < letterCount; i++) {
-	//	let div = document.createElement("div");
-	//	div.className = "letterBox letterBox" + i; // Присваиваем разные классы
-	//	parent.appendChild(div);
-	//}
-
 	getLetter();
 }
 
@@ -59,34 +46,7 @@ async function getLetter() {
 	let wrongLetterArrow = [];
 	let wrongLetterString = "";
 
-	outer: for (let j = 0; j < randomWord.length + 5; j++) {
-		let letter = prompt(`Раунд: ${round}\n
-Рекорд: ${record}\n
-Загаданное слово: ${starsArrow.reduce((accumulator, currentValue) => {
-			return accumulator + currentValue;
-		}, "")}\n
-Неправильные буквы: ${wrongLetterString}\n
-Введите букву русского алфавита:`);
-		letter = letter.toUpperCase();
-		if (
-			letter == null ||
-			letter.length != 1 ||
-			letter == "" ||
-			!isNaN(letter) ||
-			!letter.match(/^[А-Яа-яЁё]$/)
-		) {
-			j--;
-			continue outer;
-		}
-
-		for (let k = 0; k < inputLetterArrow.length; k++) {
-			//проверка на повтор
-			if (letter !== inputLetterArrow[k]) continue;
-			alert(`Буква "${letter}" уже была введена ранее. Попробуйте еще раз.`);
-			j--;
-			continue outer;
-		}
-
+	for (let j = 0; j < randomWord.length + 5; j++) {
 		// Создаем флаг, который будет указывать на то, выполнено ли условное ветвление
 		let flag = false;
 		for (let i = 0; i < randomWord.length; i++) {
@@ -104,11 +64,11 @@ async function getLetter() {
 			inputLetterArrow.push(letter);
 			wrongLetterArrow.push(letter);
 			wrongLetterString += `${letter} `;
-			alert("Такой буквы нет.");
+			console.log("Такой буквы нет.");
 		}
 
 		if (mistake == 6) {
-			alert(`Вы проиграли.\n
+			console.log(`Вы проиграли.\n
 Загаданное слово: ${randomWord.reduce((accumulator, currentValue) => {
 				return accumulator + currentValue;
 			}, "")}`);
@@ -121,12 +81,12 @@ async function getLetter() {
 		}
 
 		if (guess == randomWord.length && mistake == 0) {
-			alert(`Поздравляю! Идеальная победа!`);
+			console.log(`Поздравляю! Идеальная победа!`);
 			break;
 		}
 
 		if (guess == randomWord.length) {
-			alert("Поздравляю! Вы победили!");
+			console.log("Поздравляю! Вы победили!");
 			break;
 		}
 	}
@@ -139,7 +99,6 @@ greetings();
 let randomWord;
 // глобальная переменная для хранения массива звездочек
 let starsArrow;
-
 let round = 0;
 let winningRounds = 0;
 let record = 0;
