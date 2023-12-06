@@ -45,52 +45,6 @@ async function getLetter() {
 	let inputLetterArrow = [];
 	let wrongLetterArrow = [];
 	let wrongLetterString = "";
-
-	for (let j = 0; j < randomWord.length + 5; j++) {
-		// Создаем флаг, который будет указывать на то, выполнено ли условное ветвление
-		let flag = false;
-		for (let i = 0; i < randomWord.length; i++) {
-			if (letter == randomWord[i]) {
-				starsArrow[i] = letter;
-				inputLetterArrow.push(letter);
-				guess++;
-				flag = true;
-			}
-		}
-
-		// Условное ветвление ни разу не выполнено
-		if (!flag) {
-			mistake++;
-			inputLetterArrow.push(letter);
-			wrongLetterArrow.push(letter);
-			wrongLetterString += `${letter} `;
-			console.log("Такой буквы нет.");
-		}
-
-		if (mistake == 6) {
-			console.log(`Вы проиграли.\n
-Загаданное слово: ${randomWord.reduce((accumulator, currentValue) => {
-				return accumulator + currentValue;
-			}, "")}`);
-			winningRounds = round - 1;
-			round = 0;
-			if (winningRounds != 1 && winningRounds > record) {
-				record = winningRounds;
-			}
-			break;
-		}
-
-		if (guess == randomWord.length && mistake == 0) {
-			console.log(`Поздравляю! Идеальная победа!`);
-			break;
-		}
-
-		if (guess == randomWord.length) {
-			console.log("Поздравляю! Вы победили!");
-			break;
-		}
-	}
-	setTimeout(greetings, 1000);
 }
 
 greetings();
