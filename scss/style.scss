@@ -123,6 +123,7 @@ h6 {
 .round__title {
 }
 .round__number {
+	margin-left: 5px;
 }
 .header__record-body {
 	display: flex;
@@ -134,6 +135,7 @@ h6 {
 .record__title {
 }
 .record__number {
+	margin-left: 5px;
 }
 .header__settings-body {
 	display: flex;
@@ -182,7 +184,39 @@ h6 {
 .exit {
 }
 
+.popup__container {
+	position: absolute;
+	z-index: 100;
+	left: 50%;
+	top: 50%;
+	transform: translate(-50%, -50%);
+}
+.popup__win {
+	//display: none;
+}
+.popup-box {
+	//display: none;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	padding: 10px;
+	margin: 0 auto;
+	border: 2px solid #000;
+	border-radius: 15px;
+	font-size: 20px;
+}
+.popup__text {
+	text-align: center;
+}
+.popup__button {
+}
+.popup__lose {
+	//display: none;
+}
+
 .gallows {
+	//flex: 1 1 auto;
 }
 .gallows__container {
 }
@@ -204,6 +238,7 @@ h6 {
 }
 
 path {
+	stroke: #000;
 	stroke-linecap: round;
 	stroke-width: 3px;
 	animation: draw 3s linear forwards;
@@ -215,27 +250,37 @@ path {
 		stroke-dashoffset: 100;
 	}
 }
-.zero {
+
+.el0 {
 }
-.one {
+.el1 {
 	display: none;
 }
-.two {
+.el2 {
 	display: none;
 }
-.three {
+.el3 {
 	display: none;
 }
-.four {
+.el4 {
 	display: none;
 }
-.five {
+.el5 {
 	display: none;
 }
-.six {
+.el6 {
 	display: none;
 }
-.seven {
+.el7 {
+	display: none;
+}
+.el8 {
+	display: none;
+}
+.el9 {
+	display: none;
+}
+.el10 {
 	display: none;
 }
 
@@ -243,9 +288,8 @@ path {
 	display: flex;
 	flex-direction: row;
 	align-items: center;
-	flex: 1 1 auto;
 
-	padding: 15px 0;
+	padding: 15px;
 }
 
 .start__container {
