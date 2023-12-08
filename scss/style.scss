@@ -185,17 +185,18 @@ h6 {
 }
 
 .popup__container {
+	display: none;
 	position: absolute;
 	z-index: 100;
 	left: 50%;
-	top: 50%;
+	bottom: 1px;
 	transform: translate(-50%, -50%);
 }
 .popup__win {
 	//display: none;
 }
+
 .popup-box {
-	//display: none;
 	display: flex;
 	flex-direction: column;
 	align-items: center;
@@ -208,11 +209,34 @@ h6 {
 }
 .popup__text {
 	text-align: center;
+	line-height: 150%;
 }
-.popup__button {
+.popupButtonsBox {
+	display: flex;
+	flex-direction: row;
 }
 .popup__lose {
 	//display: none;
+}
+
+.popup__button {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	margin: 5px;
+	width: 60px;
+	height: 35px;
+	border: 2px solid #000;
+	border-radius: 10px;
+	cursor: pointer;
+	user-select: none;
+
+	&:hover {
+		box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
+		background-color: #000;
+		color: #ffffff;
+	}
 }
 
 .gallows {
@@ -300,7 +324,7 @@ path {
 	margin: 5px;
 	width: 110px;
 	height: 45px;
-	border: 2px solid #000;
+	border: 2px solid #000000;
 	border-radius: 10px;
 	cursor: pointer;
 	user-select: none;
@@ -397,11 +421,6 @@ path {
 		font-size: 28px;
 		border: 2px solid #000000;
 	}
-}
-
-.btn__true {
-}
-.btn__false {
 }
 
 .buttons-row2 {

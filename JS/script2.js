@@ -17,11 +17,50 @@ document.querySelector(".start").onclick = (event) => {
 	start();
 };
 
-document.querySelector(".exit").onclick = (event) => {
-	clear();
+document.querySelector(".button-yes").onclick = (event) => {
+	const divKeyboard = document.getElementById("keyboard");
+	divKeyboard.style.display = "flex";
+	let block = document.getElementById("wordWindow");
+	block.textContent = "";
+	//clearPopupText();
+	clearPopupContainer();
+	clearEl();
+	clearButtons();
+	start();
 };
 
-function clear() {
+document.querySelector(".button-no").onclick = (event) => {
+	clearPlayField();
+	clearButtons();
+	clearWordBlock();
+	clearEl();
+	//clearPopupText();
+	clearPopupContainer();
+};
+
+document.querySelector(".exit").onclick = (event) => {
+	clearPlayField();
+	clearButtons();
+	clearWordBlock();
+	//clearPopupText();
+	clearPopupContainer();
+	clearEl();
+};
+function clearPopupContainer() {
+	const divPopupContainer = document.getElementById("popupContainer");
+	divPopupContainer.style.display = "none";
+}
+//function clearPopupText() {
+//	let blockPopupLose = document.querySelector(".popup__text");
+//	blockPopupLose.innerHTML = "";
+//}
+
+//function clearPopupContainer() {
+//	let blockPopupLose = document.querySelector(".popupButtonsBox");
+//	blockPopupLose.innerHTML = "";
+//}
+
+function clearPlayField() {
 	const divStart = document.getElementById("start");
 	const divWordBox = document.getElementById("wordBox");
 	const divKeyboard = document.getElementById("keyboard");
@@ -34,20 +73,26 @@ function clear() {
 	divName.style.display = "flex";
 	divImage.style.display = "none";
 	divExit.style.display = "none";
+}
 
-	//сброс стилей нажатых кнопок
-	const clearAll = document.querySelectorAll(".btn");
-	for (const button of clearAll) {
+//сброс стилей нажатых кнопок
+function clearButtons() {
+	const clearBtn = document.querySelectorAll(".btn");
+	for (const button of clearBtn) {
 		button.style.pointerEvents = "All";
 		button.style.border = "2px solid #000";
 		button.style.color = "#000";
+		button.style.background = "transparent";
 	}
+}
 
-	//очистка окошек букв
+//очистка окошек букв
+function clearWordBlock() {
 	let block = document.getElementById("wordWindow");
 	block.textContent = "";
-
-	//очистка прорисовки висилицы
+}
+//очистка прорисовки висилицы
+function clearEl() {
 	const el1 = document.querySelector(".el1");
 	el1.style.display = "none";
 	const el2 = document.querySelector(".el2");
@@ -131,7 +176,7 @@ async function getLetter() {
 					guess++;
 					flag = true;
 					inactiveButton.style.cssText =
-						"pointer-events:none; border: 2px solid green; color: green";
+						"pointer-events:none; border: 2px solid green; color: green; background-color: rgb(198, 240, 198)";
 
 					//передаем букву в окошко
 					//const element = document.querySelector("letterBox1");
@@ -147,7 +192,7 @@ async function getLetter() {
 				wrongLetterArrow.push(letter);
 				wrongLetterString += `${letter} `;
 				inactiveButton.style.cssText =
-					"pointer-events:none; border: 2px solid red; color: red";
+					"pointer-events:none; border: 2px solid red; color: red; background-color: 	rgb(221, 181, 181)";
 				console.log("Такой буквы нет.");
 				const el = document.querySelector(".el" + mistake);
 				el.style.display = "flex";
@@ -167,22 +212,23 @@ async function getLetter() {
 				const el10 = document.querySelector(".el10");
 				el10.style.display = "flex";
 
-				
 				// Находим блок с классом "class1"
 				let blockPopupLose = document.querySelector(".popup__text");
 
 				// Записываем содержимое переменной в блок
-				blockPopupLose.innerHTML = `Вы проиграли.\n
+				blockPopupLose.innerHTML = `Вы проиграли!
 Загаданное слово: ${randomWord.reduce((accumulator, currentValue) => {
 					return accumulator + currentValue;
-				}, "")}\n
+				}, "")}
 Хотите сыграть в новую игру?`;
-
+				const popupContainer = document.querySelector(".popup__container");
+				const divKeyboard = document.getElementById("keyboard");
+				divKeyboard.style.display = "none";
+				popupContainer.style.display = "flex";
 				console.log(`Вы проиграли.\n
 Загаданное слово: ${randomWord.reduce((accumulator, currentValue) => {
 					return accumulator + currentValue;
 				}, "")}`);
-				//clear();
 			}
 
 			//if (guess == randomWord.length && mistake == 0) {
@@ -200,8 +246,19 @@ async function getLetter() {
 				//const recordOut = document.querySelector(".record__number");
 				//recordOut.textContent = winningRounds;
 				mistake = 0;
-				console.log("Поздравляю! Вы победили!");
-				//clear();
+				let blockPopupLose = document.querySelector(".popup__text");
+
+				// Записываем содержимое переменной в блок
+				blockPopupLose.innerHTML = `Поздравляю! Вы выиграли!<br/>
+Хотите сыграть в новую игру?`;
+				const popupContainer = document.querySelector(".popup__container");
+				const divKeyboard = document.getElementById("keyboard");
+				divKeyboard.style.display = "none";
+				popupContainer.style.display = "flex";
+				console.log(`Вы проиграли.\n
+Загаданное слово: ${randomWord.reduce((accumulator, currentValue) => {
+					return accumulator + currentValue;
+				}, "")}`);
 			}
 		};
 	}

@@ -206,10 +206,11 @@ h6 {
 }
 
 .popup__container {
+  display: none;
   position: absolute;
   z-index: 100;
   left: 50%;
-  top: 50%;
+  bottom: 1px;
   transform: translate(-50%, -50%);
 }
 
@@ -227,6 +228,33 @@ h6 {
 
 .popup__text {
   text-align: center;
+  line-height: 150%;
+}
+
+.popupButtonsBox {
+  display: flex;
+  flex-direction: row;
+}
+
+.popup__button {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 5px;
+  width: 60px;
+  height: 35px;
+  border: 2px solid #000;
+  border-radius: 10px;
+  cursor: pointer;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
+}
+.popup__button:hover {
+  box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
+  background-color: #000;
+  color: #ffffff;
 }
 
 .name {
@@ -314,7 +342,7 @@ path {
   margin: 5px;
   width: 110px;
   height: 45px;
-  border: 2px solid #000;
+  border: 2px solid #000000;
   border-radius: 10px;
   cursor: pointer;
   -webkit-user-select: none;
