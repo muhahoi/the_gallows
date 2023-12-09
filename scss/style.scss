@@ -120,8 +120,7 @@ h6 {
 	width: 33.333%;
 	user-select: none;
 }
-.round__title {
-}
+
 .round__number {
 	margin-left: 5px;
 }
@@ -132,8 +131,7 @@ h6 {
 	width: 33.333%;
 	user-select: none;
 }
-.record__title {
-}
+
 .record__number {
 	margin-left: 5px;
 }
@@ -181,19 +179,13 @@ h6 {
 	cursor: pointer;
 }
 
-.exit {
-}
-
 .popup__container {
 	display: none;
 	position: absolute;
 	z-index: 100;
 	left: 50%;
-	bottom: 1px;
+	top: 86%;
 	transform: translate(-50%, -50%);
-}
-.popup__win {
-	//display: none;
 }
 
 .popup-box {
@@ -204,8 +196,15 @@ h6 {
 	padding: 10px;
 	margin: 0 auto;
 	border: 2px solid #000;
-	border-radius: 15px;
+	border-radius: 25px;
 	font-size: 20px;
+	background-color: #ffffff;
+	box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.354);
+
+	&:hover {
+		box-shadow: 3px 3px 3px 2px rgba(0, 0, 0, 0.354);
+		border: 3px solid #000;
+	}
 }
 .popup__text {
 	text-align: center;
@@ -214,9 +213,6 @@ h6 {
 .popupButtonsBox {
 	display: flex;
 	flex-direction: row;
-}
-.popup__lose {
-	//display: none;
 }
 
 .popup__button {
@@ -239,11 +235,53 @@ h6 {
 	}
 }
 
-.gallows {
-	//flex: 1 1 auto;
+.popup__help {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-color: rgba(0, 0, 0, 0.5);
+	display: none;
 }
-.gallows__container {
+
+.help-content {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	background-color: white;
+	padding: 20px;
+	border-radius: 25px;
+	border: 2px solid #000000;
 }
+
+.help__title {
+	font-size: 20px;
+	text-align: center;
+	padding-bottom: 10px;
+}
+
+.help__text {
+	font-size: 18px;
+}
+.help__close {
+	display: flex;
+	justify-content: end;
+}
+.close-button {
+	background-color: #ccc;
+	border: 2px solid #000000;
+	color: black;
+	text-align: center;
+	padding: 1px 1px;
+	cursor: pointer;
+	font-size: 18px;
+	border-radius: 50%;
+	user-select: none;
+	background: transparent;
+}
+
 .name {
 	display: flex;
 	flex-direction: column;
@@ -253,9 +291,9 @@ h6 {
 	font-size: 100px;
 }
 .gallows__content {
+	display: none;
 }
 .image__container {
-	display: none;
 	padding-top: 20px;
 	margin: 0 auto;
 	max-width: 282px;
@@ -275,8 +313,6 @@ path {
 	}
 }
 
-.el0 {
-}
 .el1 {
 	display: none;
 }
@@ -376,21 +412,18 @@ path {
 	cursor: pointer;
 	user-select: none;
 }
-.keyboard {
-}
+
 .keyboard__container {
 	display: none;
 	margin: 0 auto;
-	margin-bottom: 30px;
-}
-.keyboard__content {
+	padding-bottom: 10px;
+	justify-content: center;
 }
 
-.buttons {
-}
 .buttons-row1 {
 	display: flex;
 	flex-direction: row;
+	justify-content: space-between;
 }
 .btn {
 	margin: 5px;
