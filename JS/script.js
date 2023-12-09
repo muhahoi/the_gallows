@@ -140,7 +140,7 @@ async function start() {
 	++round;
 	const roundOut = document.querySelector(".round__number");
 	roundOut.textContent = round;
-	const path = "/dictionary.txt";
+	const path = "https://muhahoi.github.io/the_gallows/dictionary.txt";
 	const text = await fetch(path).then((response) => response.text());
 	// Выбираем случайное слово из текста файла
 	const words = text.replace(/\r/g, "").split("\n");
