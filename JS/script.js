@@ -145,8 +145,6 @@ async function start() {
 	// Выбираем случайное слово из текста файла
 	const words = text.replace(/\r/g, "").split("\n");
 	randomWord = [...words[Math.floor(Math.random() * words.length)]];
-	//randomWord = "А";
-	console.log(randomWord);
 	createDiv();
 }
 function createDiv() {
